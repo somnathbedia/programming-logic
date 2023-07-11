@@ -9,15 +9,24 @@ void printNums(int* arr,int length){
     cout << endl;
 }
 
-void manipulateArray(int* arr,int length,int newValue,int index){
+int* manipulateArray(int* arr,int length,int newValue,int index){
     if(index<0){
-        return;
+        cout << "Please Enter valid index";
     }
     for (int i = 0; i < length; i++){
         if(i == index){
             arr[i] = newValue;
         }
     }
+
+    return arr;
+}
+
+void printManipulateArray(int* array,int length){
+    for (int i = 0; i < length; i++){
+        cout << array[i] << " ";
+    }
+    cout << endl;
 }
 
 void swap(int &a, int &b){
@@ -27,17 +36,23 @@ void swap(int &a, int &b){
     cout << a << " " << b << endl;
 }
 
-int main(){
-    int evenNums[5] = {2,4,6,8,10};
-    int length = sizeof(evenNums)/sizeof(evenNums[0]);
-    int val,index;
-    cout << "Enter value to be inserted: ";
-    cin >> val;
-    cout << "Enter index: ";
-    cin >> index;
+int* deleteArrayItem(int* arr,int &length,int index){
+    if(index < 0 && index > length){
+        cout << "Please enter valid index!!"<<endl;
+    }
+    for (int i = 0; i < length - 1; i++){
+        if(i >= index){
+            arr[i] = arr[i + 1];
+        }
+    }
+    length--;
+    return arr;
+}
 
-    manipulateArray(evenNums, length, 100, 2);
-    cout << "Array manipulate successfully!!!" << endl;
+int main(){
+    int evenNums[] = {2,4,6,8,10,16,20,24,42};
+    int length = sizeof(evenNums)/sizeof(evenNums[0]);
     
+
     return 0;
 }
