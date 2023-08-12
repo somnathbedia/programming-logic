@@ -23,7 +23,7 @@ public:
 
 class Mathematics
 {
-    public:
+public:
     int evenNum[4] = {};
     int lenght = 4;
 
@@ -65,6 +65,6 @@ int main()
     Mathematics obj;
 
     obj.printEvenOnly();
-    
+
     return 0;
 }
